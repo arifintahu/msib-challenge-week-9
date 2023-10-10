@@ -27,7 +27,7 @@ async function getItem(id) {
   return Item.findByPk(id);
 }
 
-// TODO: write function getItemByActivityId with pagination
+// TODO: write function getActivityItems with pagination
 
 module.exports = {
   createItem,

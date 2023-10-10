@@ -27,8 +27,6 @@ async function getItem(req, res, next) {
 
 // TODO: write function updateItem
 
-// TODO: write function getItemsByActivityId
-
 module.exports = {
   createItem,
   getItem,

@@ -37,6 +37,8 @@ async function getActivity(req, res, next) {
   }
 }
 
+// TODO: write function getActivityItems
+
 module.exports = {
   createActivity,
   getActivities,

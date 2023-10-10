@@ -9,8 +9,6 @@ const requirements = {
   getItem: [param("id").isInt({ min: 1 })],
 
   // TODO: Add requirements for updateItem
-
-  // TODO: Add requirements for getItemsByActivityId
 };
 
 module.exports = requirements;

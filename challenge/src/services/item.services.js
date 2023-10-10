@@ -33,8 +33,6 @@ async function getItem(id) {
 
 // TODO: write function updateItem
 
-// TODO: write function getItemsByActivityId
-
 module.exports = {
   createItem,
   getItem,

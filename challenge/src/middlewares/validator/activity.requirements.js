@@ -7,6 +7,8 @@ const requirements = {
     query("limit").isInt({ min: 10, max: 50 }).optional({ nullable: true }),
   ],
   getActivity: [param("id").isInt({ min: 1 })],
+
+  // TODO: Add requirements for getActivityItems
 };
 
 module.exports = requirements;

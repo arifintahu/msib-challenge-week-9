@@ -15,6 +15,4 @@ router
 
 // TODO: create route PUT /items/:id
 
-// TODO: create route GET /items/activity/:id
-
 module.exports = router;

@@ -38,6 +38,8 @@ async function getActivity(id) {
   return activity;
 }
 
+// TODO: write function getActivityItems
+
 module.exports = {
   createActivity,
   getActivities,

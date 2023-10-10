@@ -35,19 +35,19 @@ Here's the structure of the project:
 {
     "status": "success",
     "data": {
-        "isActive": false,
         "id": 1,
         "activityId": 1,
         "title": "Item 1",
         "priority": "normal",
+        "isActive": false,
         "updatedAt": "2023-10-10T05:27:18.930Z",
         "createdAt": "2023-10-10T07:27:18.930Z"
     }
 }
 ```
 
-2. Create an API to get items by activity id with pagination
-- Example endpoint: `GET /api/v1/items/activity/:id?page=1&limit=10`
+2. Create an API to get activity items with pagination
+- Example endpoint: `GET /api/v1/activities/:id/items?page=1&limit=10`
 - Example response:
 ```json
 {
