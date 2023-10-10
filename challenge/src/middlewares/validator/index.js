@@ -1,8 +1,10 @@
-const { validationResult, ValidationChain } = require("express-validator");
+const { validationResult } = require("express-validator");
 const activityRequirements = require("./activity.requirements");
+const itemRequirements = require("./item.requirements");
 
 const requirements = {
   ...activityRequirements,
+  ...itemRequirements,
 };
 
 function validate(validations) {

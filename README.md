@@ -1,6 +1,6 @@
 # Challenge Week 9 - To Do App
 
-In this challenge, we will build a simple To-Do App. This app has two main features: creating an activity and adding items to the activity. Currently, we have an incomplete project, and your task is to complete the project based on the challenge objectives.
+In this challenge, we will build a simple To-Do App. This app has two main features: creating an `activity` and adding `items` to the activity. Currently, we have an incomplete project, and your task is to complete the project based on the challenge objectives.
 
 Here's the structure of the project:
 
@@ -18,7 +18,51 @@ Here's the structure of the project:
 ```
 
 ## Objectives
+1. Create an API to update item
 
+- Example endpoint: `PUT /api/v1/items/:id`
+- Example body:
+```json
+{
+    "title": "Item 1",
+    "priority": "normal",
+    "isActive": false,
+}
+```
+
+- Example response:
+```json
+{
+    "status": "success",
+    "data": {
+        "isActive": false,
+        "id": 1,
+        "activityId": 1,
+        "title": "Item 1",
+        "priority": "normal",
+        "updatedAt": "2023-10-10T05:27:18.930Z",
+        "createdAt": "2023-10-10T07:27:18.930Z"
+    }
+}
+```
+
+2. Create an API to get items by activity id with pagination
+- Example endpoint: `GET /api/v1/items/activity/:id?page=1&limit=10`
+- Example response:
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "id": 1,
+            "activityId": 1,
+            "title": "Item 1",
+            "isActive": true,
+            "priority": "normal"
+        }
+    ]
+}
+```
 
 ## How to Submit
 
