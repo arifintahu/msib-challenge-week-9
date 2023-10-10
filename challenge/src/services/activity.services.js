@@ -1,45 +1,45 @@
-const { activityRepositories } =  require('../repositories')
+const { activityRepositories } = require("../repositories");
 
 async function createActivity({ title }) {
-    if (!title) {
-      return Promise.reject(new Error("Title is empty"));
-    }
-    const activity = await activityRepositories.createActivity({
-      title,
-    });
-    return activity;
+  if (!title) {
+    return Promise.reject(new Error("Title is empty"));
+  }
+  const activity = await activityRepositories.createActivity({
+    title,
+  });
+  return activity;
 }
 
-async function getActivities({ page = 1, limit = 10}) {
-    if (page < 1 || limit < 1) {
-        return Promise.reject(new Error("Invalid page and/or limit"));
-    }
-    const activities = await activityRepositories.getActivities({ 
-        page, 
-        limit
-    })
+async function getActivities({ page = 1, limit = 10 }) {
+  if (page < 1 || limit < 1) {
+    return Promise.reject(new Error("Invalid page and/or limit"));
+  }
+  const activities = await activityRepositories.getActivities({
+    page,
+    limit,
+  });
 
-    if (!activities.length) {
-        return Promise.reject(new Error("Activity not found"));
-    }
+  if (!activities.length) {
+    return Promise.reject(new Error("Activity not found"));
+  }
 
-    return activities;
+  return activities;
 }
 
 async function getActivity(id) {
-    if (!id) {
-        return Promise.reject(new Error("Invalid id"));
-    }
-    const activity = await activityRepositories.getActivity(id)
-    
-    if (!activity) {
-        return Promise.reject(new Error("Activity not found"));
-    }
-    return activity;
+  if (!id) {
+    return Promise.reject(new Error("Invalid id"));
+  }
+  const activity = await activityRepositories.getActivity(id);
+
+  if (!activity) {
+    return Promise.reject(new Error("Activity not found"));
+  }
+  return activity;
 }
 
 module.exports = {
-    createActivity,
-    getActivities,
-    getActivity,
-}
+  createActivity,
+  getActivities,
+  getActivity,
+};

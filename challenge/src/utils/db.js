@@ -1,15 +1,9 @@
-const {
-    Activity,
-    Item,
-} = require("../models")
+const { Activity, Item } = require("../models");
 
 function syncTables() {
-    return Promise.all([
-        Activity.sync(),
-        Item.sync(),
-    ])
+  return Promise.all([Activity.sync(), Item.sync()]);
 }
 
 module.exports = {
-    syncTables,
-}
+  syncTables,
+};

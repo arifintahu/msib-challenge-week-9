@@ -5,7 +5,7 @@ async function createActivity(req, res, next) {
     const result = await activityServices.createActivity(req.body);
     res.json({
       status: "success",
-      data: result
+      data: result,
     });
   } catch (err) {
     next(err);
@@ -13,16 +13,16 @@ async function createActivity(req, res, next) {
 }
 
 async function getActivities(req, res, next) {
-    try {
-      const result = await activityServices.getActivities(req.query);
-      res.json({
-        status: "success",
-        data: result
-      });
-    } catch (err) {
-      next(err);
-    }
+  try {
+    const result = await activityServices.getActivities(req.query);
+    res.json({
+      status: "success",
+      data: result,
+    });
+  } catch (err) {
+    next(err);
   }
+}
 
 async function getActivity(req, res, next) {
   try {
@@ -30,7 +30,7 @@ async function getActivity(req, res, next) {
     const result = await activityServices.getActivity(id);
     res.json({
       status: "success",
-      data: result
+      data: result,
     });
   } catch (err) {
     next(err);

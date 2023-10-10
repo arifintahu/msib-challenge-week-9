@@ -1,10 +1,7 @@
 const express = require("express");
 const routes = require("./routes");
 const { API } = require("./config");
-const {
-  errorHandler,
-  morganMiddleware,
-} = require("./middlewares")
+const { errorHandler, morganMiddleware } = require("./middlewares");
 
 function createServer() {
   const app = express();

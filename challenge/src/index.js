@@ -1,8 +1,8 @@
 const createServer = require("./server");
 const { PORT } = require("./config");
 const sequelize = require("./utils/sequelize");
-const logger = require("./utils/logger")
-const { syncTables } = require("./utils/db")
+const logger = require("./utils/logger");
+const { syncTables } = require("./utils/db");
 
 function startServer() {
   const app = createServer();
