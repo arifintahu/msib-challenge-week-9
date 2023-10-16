@@ -10,6 +10,7 @@ const requirements = {
 
   // TODO: Add requirements for updateItem
   updateItem: [
+    param("id").isInt({ min: 1 }),
     body("title").optional().isString().isLength({ min: 3 }),
     body("priority").optional().isString().isIn(["low", "normal", "high"]),
     body("isActive").optional().isBoolean(),
