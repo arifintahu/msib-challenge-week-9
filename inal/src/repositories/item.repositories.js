@@ -8,8 +8,7 @@ async function createItem({ activityId, title, priority }) {
   });
 }
 
-async function updateItem(aidi, { title, priority, isActive }) {
-  const id = Number(aidi)
+async function updateItem(id, { title, priority, isActive }) {
   return Item.update(
     {
       title,
@@ -29,9 +28,18 @@ async function getItem(id) {
 }
 
 // TODO: write function getActivityItems with pagination
+async function getItems({ page, limit }) {
+  const offset = (page - 1) * limit;
+  return Item.findAll({
+    attributes: ["id", "activityId", "title", "isActive", "priority",],
+    limit: limit,
+    offset: offset,
+  });
+}
 
 module.exports = {
   createItem,
   updateItem,
   getItem,
+  getItems,
 };

@@ -7,7 +7,8 @@ const { validate, requirements } = validator;
 
 router
   .route("/")
-  .post([validate(requirements.createItem)], itemController.createItem);
+  .post([validate(requirements.createItem)], itemController.createItem)
+  .get([validate(requirements.getItems)], itemController.getItems);
 
 router
   .route("/:id")

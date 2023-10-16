@@ -49,8 +49,20 @@ async function updateItem(id, title, priority, isActive) {
   return get;
 }
 
+async function getItems({ page = 1, limit = 10 }) {
+  if (page < 1 || limit < 1) {
+    return Promise.reject(new Error("Invalid page and/or limit"));
+  }
+  const items = await itemRepositories.getItems({
+    page,
+    limit,
+  });
+  return items
+}
+
 module.exports = {
   createItem,
   getItem,
-  updateItem
+  updateItem,
+  getItems
 };

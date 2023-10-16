@@ -1,4 +1,4 @@
-const { body, param } = require("express-validator");
+const { body, param, query } = require("express-validator");
 
 const requirements = {
   createItem: [
@@ -11,6 +11,10 @@ const requirements = {
   // TODO: Add requirements for updateItem
   updateItems: [
     param("id").isInt({ min: 1 }),
+  ],
+  getItems: [
+    query("page").isInt({ min: 1 }).optional({ nullable: true }),
+    query("limit").isInt({ min: 10, max: 50 }).optional({ nullable: true }),
   ],
 };
 

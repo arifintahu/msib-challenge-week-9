@@ -30,8 +30,19 @@ async function updateItem(req, res, next) {
   try {
     const {id} = req.params;
     const {title, priority, isActive} = req.body
-    console.log(id, title,priority, isActive)
     const result = await itemServices.updateItem(id, title, priority, isActive);
+    res.json({
+      status: "success",
+      data: result,
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function getItems(req, res, next) {
+  try {
+    const result = await itemServices.getItems(req.query);
     res.json({
       status: "success",
       data: result,
@@ -44,5 +55,6 @@ async function updateItem(req, res, next) {
 module.exports = {
   createItem,
   getItem,
-  updateItem
+  updateItem,
+  getItems
 };
