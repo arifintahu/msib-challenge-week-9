@@ -1,4 +1,5 @@
 const { activityRepositories } = require("../repositories");
+const { Item } = require("../models");
 
 async function createActivity({ title }) {
   if (!title) {
@@ -39,9 +40,23 @@ async function getActivity(id) {
 }
 
 // TODO: write function getActivityItems
+async function getActivityItems(id) {
+  if (!id) {
+    return Promise.reject(new Error("Invalid id"));
+  }
+  const activity = await activityRepositories.getActivity(id);
 
+  if (!activity) {
+    return Promise.reject(new Error("Activity not found"));
+  }
+  const items = await Item.findAll({
+    where: {activityId: id}
+  })
+  return { activity, items };
+}
 module.exports = {
   createActivity,
   getActivities,
   getActivity,
+  getActivityItems
 };

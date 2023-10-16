@@ -21,5 +21,8 @@ router
   .get([validate(requirements.getActivity)], activityController.getActivity);
 
 // TODO: create route GET /activities/:id/items
+router
+  .route("/:id/items")
+  .get([validate(requirements.getActivityItems)], activityController.getActivityItems);
 
 module.exports = router;

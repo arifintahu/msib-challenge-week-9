@@ -38,9 +38,21 @@ async function getActivity(req, res, next) {
 }
 
 // TODO: write function getActivityItems
-
+async function getActivityItems(req, res, next) {
+  try {
+    const id = req.params.id;
+    const result = await activityServices.getActivityItems(id);
+    res.json({
+      status: "success",
+      data: result,
+    });
+  } catch (err) {
+    next(err);
+  }
+}
 module.exports = {
   createActivity,
   getActivities,
   getActivity,
+  getActivityItems,
 };

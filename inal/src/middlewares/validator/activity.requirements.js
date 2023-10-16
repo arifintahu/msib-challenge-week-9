@@ -9,6 +9,7 @@ const requirements = {
   getActivity: [param("id").isInt({ min: 1 })],
 
   // TODO: Add requirements for getActivityItems
+  getActivityItems: [param("id").isInt({ min: 1 })],
 };
 
 module.exports = requirements;
